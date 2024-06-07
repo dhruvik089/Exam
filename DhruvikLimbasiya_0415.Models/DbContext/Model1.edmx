@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GameReward_0415Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Credit">
+          <Key>
+            <PropertyRef Name="Credit_Id" />
+          </Key>
+          <Property Name="Credit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Userid" Type="int" />
+          <Property Name="CreditAmount" Type="int" />
+          <Property Name="TransactionDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Dabit">
+          <Key>
+            <PropertyRef Name="Debit_Id" />
+          </Key>
+          <Property Name="Debit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Userid" Type="int" />
+          <Property Name="DebitAmount" Type="int" />
+          <Property Name="TransactionDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="40" />
+          <Property Name="email" Type="varchar" MaxLength="40" />
+          <Property Name="password" Type="text" />
+        </EntityType>
+        <EntityType Name="TransactionsHistory">
+          <Key>
+            <PropertyRef Name="Transaction_id" />
+          </Key>
+          <Property Name="Transaction_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="DebitAmount" Type="int" />
+          <Property Name="CreditAmount" Type="int" />
+          <Property Name="TotalAmount" Type="int" />
+          <Property Name="ChanceLeft" Type="int" />
+          <Property Name="TransactionDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Wallet">
+          <Key>
+            <PropertyRef Name="Wallet_id" />
+          </Key>
+          <Property Name="Wallet_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="DebitAmount" Type="int" />
+          <Property Name="creditAmout" Type="int" />
+          <Property Name="totalAmount" Type="int" />
+          <Property Name="DebitDate" Type="datetime" />
+          <Property Name="RemainingChance" Type="int" />
+        </EntityType>
+        <Association Name="FK__Credit__Userid__60A75C0F">
+          <End Role="Registration" Type="Self.Registration" Multiplicity="0..1" />
+          <End Role="Credit" Type="Self.Credit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Credit">
+              <PropertyRef Name="Userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dabit__Userid__5629CD9C">
+          <End Role="Registration" Type="Self.Registration" Multiplicity="0..1" />
+          <End Role="Dabit" Type="Self.Dabit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Dabit">
+              <PropertyRef Name="Userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__user___5CD6CB2B">
+          <End Role="Registration" Type="Self.Registration" Multiplicity="0..1" />
+          <End Role="TransactionsHistory" Type="Self.TransactionsHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="TransactionsHistory">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Wallet__user_id__3D5E1FD2">
+          <End Role="Registration" Type="Self.Registration" Multiplicity="0..1" />
+          <End Role="Wallet" Type="Self.Wallet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Wallet">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GameReward_0415ModelStoreContainer">
+          <EntitySet Name="Credit" EntityType="Self.Credit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dabit" EntityType="Self.Dabit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransactionsHistory" EntityType="Self.TransactionsHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wallet" EntityType="Self.Wallet" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Credit__Userid__60A75C0F" Association="Self.FK__Credit__Userid__60A75C0F">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="Credit" EntitySet="Credit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dabit__Userid__5629CD9C" Association="Self.FK__Dabit__Userid__5629CD9C">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="Dabit" EntitySet="Dabit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__user___5CD6CB2B" Association="Self.FK__Transacti__user___5CD6CB2B">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="TransactionsHistory" EntitySet="TransactionsHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Wallet__user_id__3D5E1FD2" Association="Self.FK__Wallet__user_id__3D5E1FD2">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="Wallet" EntitySet="Wallet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GameReward_0415Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Wallet" Relationship="Self.FK__Wallet__user_id__3D5E1FD2" FromRole="Registration" ToRole="Wallet" />
+          <NavigationProperty Name="Credit" Relationship="GameReward_0415Model.FK__Credit__Userid__60A75C0F" FromRole="Registration" ToRole="Credit" />
+          <NavigationProperty Name="Dabit" Relationship="GameReward_0415Model.FK__Dabit__Userid__5629CD9C" FromRole="Registration" ToRole="Dabit" />
+          <NavigationProperty Name="TransactionsHistory" Relationship="GameReward_0415Model.FK__Transacti__user___5CD6CB2B" FromRole="Registration" ToRole="TransactionsHistory" />
+        </EntityType>
+        <EntityType Name="Wallet">
+          <Key>
+            <PropertyRef Name="Wallet_id" />
+          </Key>
+          <Property Name="Wallet_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="DebitAmount" Type="Int32" />
+          <Property Name="creditAmout" Type="Int32" />
+          <Property Name="totalAmount" Type="Int32" />
+          <Property Name="DebitDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Registration" Relationship="Self.FK__Wallet__user_id__3D5E1FD2" FromRole="Wallet" ToRole="Registration" />
+          <Property Name="RemainingChance" Type="Int32" />
+        </EntityType>
+        <Association Name="FK__Wallet__user_id__3D5E1FD2">
+          <End Role="Registration" Type="Self.Registration" Multiplicity="0..1" />
+          <End Role="Wallet" Type="Self.Wallet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Wallet">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GameReward_0415Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Registration" EntityType="Self.Registration" />
+          <EntitySet Name="Wallet" EntityType="Self.Wallet" />
+          <AssociationSet Name="FK__Wallet__user_id__3D5E1FD2" Association="Self.FK__Wallet__user_id__3D5E1FD2">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="Wallet" EntitySet="Wallet" />
+          </AssociationSet>
+          <EntitySet Name="Credit" EntityType="GameReward_0415Model.Credit" />
+          <EntitySet Name="Dabit" EntityType="GameReward_0415Model.Dabit" />
+          <EntitySet Name="TransactionsHistory" EntityType="GameReward_0415Model.TransactionsHistory" />
+          <AssociationSet Name="FK__Credit__Userid__60A75C0F" Association="GameReward_0415Model.FK__Credit__Userid__60A75C0F">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="Credit" EntitySet="Credit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Dabit__Userid__5629CD9C" Association="GameReward_0415Model.FK__Dabit__Userid__5629CD9C">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="Dabit" EntitySet="Dabit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__user___5CD6CB2B" Association="GameReward_0415Model.FK__Transacti__user___5CD6CB2B">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="TransactionsHistory" EntitySet="TransactionsHistory" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Credit">
+          <Key>
+            <PropertyRef Name="Credit_Id" />
+          </Key>
+          <Property Name="Credit_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="Int32" />
+          <Property Name="CreditAmount" Type="Int32" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Registration" Relationship="GameReward_0415Model.FK__Credit__Userid__60A75C0F" FromRole="Credit" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="Dabit">
+          <Key>
+            <PropertyRef Name="Debit_Id" />
+          </Key>
+          <Property Name="Debit_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="Int32" />
+          <Property Name="DebitAmount" Type="Int32" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Registration" Relationship="GameReward_0415Model.FK__Dabit__Userid__5629CD9C" FromRole="Dabit" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="TransactionsHistory">
+          <Key>
+            <PropertyRef Name="Transaction_id" />
+          </Key>
+          <Property Name="Transaction_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="DebitAmount" Type="Int32" />
+          <Property Name="CreditAmount" Type="Int32" />
+          <Property Name="TotalAmount" Type="Int32" />
+          <Property Name="ChanceLeft" Type="Int32" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Registration" Relationship="GameReward_0415Model.FK__Transacti__user___5CD6CB2B" FromRole="TransactionsHistory" ToRole="Registration" />
+        </EntityType>
+        <Association Name="FK__Credit__Userid__60A75C0F">
+          <End Type="GameReward_0415Model.Registration" Role="Registration" Multiplicity="0..1" />
+          <End Type="GameReward_0415Model.Credit" Role="Credit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Credit">
+              <PropertyRef Name="Userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Dabit__Userid__5629CD9C">
+          <End Type="GameReward_0415Model.Registration" Role="Registration" Multiplicity="0..1" />
+          <End Type="GameReward_0415Model.Dabit" Role="Dabit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Dabit">
+              <PropertyRef Name="Userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__user___5CD6CB2B">
+          <End Type="GameReward_0415Model.Registration" Role="Registration" Multiplicity="0..1" />
+          <End Type="GameReward_0415Model.TransactionsHistory" Role="TransactionsHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="TransactionsHistory">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GameReward_0415ModelStoreContainer" CdmEntityContainer="GameReward_0415Entities">
+          <EntitySetMapping Name="Registration">
+            <EntityTypeMapping TypeName="GameReward_0415Model.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wallet">
+            <EntityTypeMapping TypeName="GameReward_0415Model.Wallet">
+              <MappingFragment StoreEntitySet="Wallet">
+                <ScalarProperty Name="RemainingChance" ColumnName="RemainingChance" />
+                <ScalarProperty Name="Wallet_id" ColumnName="Wallet_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="DebitAmount" ColumnName="DebitAmount" />
+                <ScalarProperty Name="creditAmout" ColumnName="creditAmout" />
+                <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+                <ScalarProperty Name="DebitDate" ColumnName="DebitDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Credit">
+            <EntityTypeMapping TypeName="GameReward_0415Model.Credit">
+              <MappingFragment StoreEntitySet="Credit">
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Credit_Id" ColumnName="Credit_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dabit">
+            <EntityTypeMapping TypeName="GameReward_0415Model.Dabit">
+              <MappingFragment StoreEntitySet="Dabit">
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="DebitAmount" ColumnName="DebitAmount" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Debit_Id" ColumnName="Debit_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionsHistory">
+            <EntityTypeMapping TypeName="GameReward_0415Model.TransactionsHistory">
+              <MappingFragment StoreEntitySet="TransactionsHistory">
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="ChanceLeft" ColumnName="ChanceLeft" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+                <ScalarProperty Name="DebitAmount" ColumnName="DebitAmount" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="Transaction_id" ColumnName="Transaction_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

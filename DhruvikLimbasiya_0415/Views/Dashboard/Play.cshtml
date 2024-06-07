@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container text-center">
+
+    <h1>
+        Random Number
+    </h1>
+
+    <h3 class="randomeNumber">
+    </h3>
+    <button class="btn btn-outline-info" type="button" id="playButton">Play</button>
+    @Html.ActionLink("Back to home Page", "Dashboard", new { @Controller = "Dashboard" }, htmlAttributes: new { @class = "btn btn-outline-primary" })
+
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        //debugger
+        $("#playButton").on("click", () => {
+            var randomNumber = document.getElementsByClassName("randomeNumber")[0];
+            var random = Math.floor(Math.random() * 100) + 1;
+            
+            if (Number(@Session["Chance"]) > 0) {
+                randomNumber.innerHTML = random;
+                    $.ajax({
+                        url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
+                        type: "GET",
+                        success: function (data) {
+                            console.log("click");
+                            if (data == 1) {
+                                randomNumber.innerHTML = random;
+                            }
+                            else {
+                                alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
+                            }
+                        }
+                    });
+            }
+                else {
+
+                    if (confirm("Pay 20 for more one time play...")) {
+                        randomNumber.innerHTML = random;
+                        $.ajax({
+                            url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
+                            type: "GET",
+                            success: function (data) {
+                                if (data == 1) {
+                                    randomNumber.innerHTML = random;
+                                }
+                                else {
+                                    alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
+
+                                }
+                            }
+                        });
+                    }
+                }
+
+
+        })
+
+    })
+
+</script>

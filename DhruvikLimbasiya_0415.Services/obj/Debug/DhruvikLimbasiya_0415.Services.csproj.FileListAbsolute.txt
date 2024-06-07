@@ -1,0 +1,30 @@
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Services.dll.config
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Services.dll
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Services.pdb
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Models.dll
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\bin\Debug\EntityFramework.dll
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Models.pdb
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Models.dll.config
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\bin\Debug\EntityFramework.xml
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\obj\Debug\DhruvikLimbasiya_0415.Services.csproj.AssemblyReference.cache
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\obj\Debug\DhruvikLimbasiya_0415.Services.csproj.CoreCompileInputs.cache
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\obj\Debug\DhruvikLimbasiya_0415.Services.csproj.CopyComplete
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\obj\Debug\DhruvikLimbasiya_0415.Services.dll
+C:\Dhruvik Limbasiya\DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.Services\obj\Debug\DhruvikLimbasiya_0415.Services.pdb
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Services.dll.config
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Services.dll
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Services.pdb
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Models.dll
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\bin\Debug\EntityFramework.dll
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Models.pdb
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\bin\Debug\DhruvikLimbasiya_0415.Models.dll.config
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\bin\Debug\EntityFramework.xml
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\obj\Debug\DhruvikLimbasiya_0415.Services.csproj.AssemblyReference.cache
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\obj\Debug\DhruvikLimbasiya_0415.Services.csproj.CoreCompileInputs.cache
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\obj\Debug\DhruvikLimbasiya_0415.Services.csproj.CopyComplete
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\obj\Debug\DhruvikLimbasiya_0415.Services.dll
+C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Services\obj\Debug\DhruvikLimbasiya_0415.Services.pdb

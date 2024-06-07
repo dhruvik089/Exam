@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34729.46
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhruvikLimbasiya_0415", "DhruvikLimbasiya_0415\DhruvikLimbasiya_0415.csproj", "{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhruvikLimbasiya_0415.Models", "DhruvikLimbasiya_0415.Models\DhruvikLimbasiya_0415.Models.csproj", "{E235E86C-88C5-460B-84D3-2A5A5A322450}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhruvikLimbasiya_0415.Helper", "DhruvikLimbasiya_0415.Helper\DhruvikLimbasiya_0415.Helper.csproj", "{DEE0088E-20BE-41DB-9E91-25AC3F811160}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhruvikLimbasiya_0415.Services", "DhruvikLimbasiya_0415.Services\DhruvikLimbasiya_0415.Services.csproj", "{E25C89E4-0D98-4BA8-9502-4602B6D8B9A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhruvikLimbasiya_0415.Api", "DhruvikLimbasiya_0415.Api\DhruvikLimbasiya_0415.Api.csproj", "{E34F1F62-C600-427D-B32F-C55B5F472DF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E235E86C-88C5-460B-84D3-2A5A5A322450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E235E86C-88C5-460B-84D3-2A5A5A322450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E235E86C-88C5-460B-84D3-2A5A5A322450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E235E86C-88C5-460B-84D3-2A5A5A322450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE0088E-20BE-41DB-9E91-25AC3F811160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE0088E-20BE-41DB-9E91-25AC3F811160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE0088E-20BE-41DB-9E91-25AC3F811160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE0088E-20BE-41DB-9E91-25AC3F811160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E25C89E4-0D98-4BA8-9502-4602B6D8B9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E25C89E4-0D98-4BA8-9502-4602B6D8B9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E25C89E4-0D98-4BA8-9502-4602B6D8B9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E25C89E4-0D98-4BA8-9502-4602B6D8B9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E34F1F62-C600-427D-B32F-C55B5F472DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E34F1F62-C600-427D-B32F-C55B5F472DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E34F1F62-C600-427D-B32F-C55B5F472DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E34F1F62-C600-427D-B32F-C55B5F472DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1CDF781-029C-47E8-B213-F4DE5E8E6EE5}
+	EndGlobalSection
+EndGlobal

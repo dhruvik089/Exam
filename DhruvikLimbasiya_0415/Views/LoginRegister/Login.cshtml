@@ -1,0 +1,55 @@
+﻿@model DhruvikLimbasiya_0415.Models.ViewModel.LoginModel
+@{
+    Layout = "~/Views/Shared/_LoginRegister.cshtml";
+}
+
+@if (TempData["register"] != null)
+{
+    <script>
+        toastr.success('@TempData["register"]');
+    </script>
+}
+@if (TempData["LoginFailed"] != null)
+{
+    <script>
+        toastr.error('@TempData["LoginFailed"]');
+    </script>
+}
+
+<div class="main">
+
+    <!-- Sing in  Form -->
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="~/Content/Theam/Login/images/signin-image.jpg" /></figure>
+                    @Html.ActionLink("Click here for Register", "Registration", "LoginRegister", htmlAttributes: new { @class = "signin-image-link" })
+                </div>
+
+                <div class="signin-form">
+                    <h2 class="form-title">Sign up</h2>
+                    <form method="POST" class="register-form" id="login-form">
+                        @*<input name="user_id" value=@Convert.ToInt32(ViewBag.user_id) class="d-none"/>*@
+                        <div class="form-group">
+                            <label for="Email"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="email" name="email" id="Email" placeholder="Email@gmail.com" />
+                            @Html.ValidationMessageFor(m => m.email, "", htmlAttributes: new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="Password"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="password" name="password" id="password" placeholder="Password" />
+                            @Html.ValidationMessageFor(m => m.password, "", htmlAttributes: new { @class = "text-danger" })
+                        </div>
+
+
+                        <div class="form-group form-button">
+                            <input type="submit" id="submit" class="form-submit" value="Login" />
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

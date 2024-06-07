@@ -1,0 +1,15 @@
+﻿@if (TempData["Login"] != null)
+{
+    <script>
+        toastr.success('@TempData["Login"]');
+    </script>
+}
+
+
+<div class="container text-center">
+    Well Come to Game
+    <h1>
+        Total Wallet Amount : @Session["TotalWalletAmount"]
+
+    </h1>
+</div>
