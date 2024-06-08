@@ -27,6 +27,8 @@ namespace DhruvikLimbasiya_0415.Controllers
         {
             //Session["TotalWalletAmount"] = _wallet.totalWalletAmount(Convert.ToInt32(Session["UserId"]));
             Session["TotalWalletAmount"] =await WebHelper.TotalWalletAmount(Convert.ToInt32(Session["UserId"]), "TotalWalletAmount");
+            Session["GetProfitToday"] = await WebHelper.TotalWalletAmount(Convert.ToInt32(Session["UserId"]), "GetOneDayProfit");
+
 
             return View();
         }
@@ -44,7 +46,7 @@ namespace DhruvikLimbasiya_0415.Controllers
 
         public ActionResult Wallet()
         {
-            var transactionsList = _context.TransactionsHistory.ToList();
+            var transactionsList = _context.TransactionsHistory.Where(item => item.user_id == Convert.ToInt32(Session["UserId"])).ToList();
             return View(transactionsList);
         }
 

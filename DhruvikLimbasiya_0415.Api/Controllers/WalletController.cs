@@ -51,5 +51,13 @@ namespace DhruvikLimbasiya_0415.Api.Controllers
             int Chance = _wallet.AddChance(id);
             return Chance;
         }
+
+        [Route("api/Wallet/GetOneDayProfit")]
+        [HttpGet]
+        public int GetOneDayProfit(int id)
+        {
+            int profit = _wallet.GetOneDayProfit(id);
+            return profit;
+        }
     }
 }

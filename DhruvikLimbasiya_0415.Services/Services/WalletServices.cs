@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -111,6 +112,16 @@ namespace DhruvikLimbasiya_0415.Services.Services
             int chance = GetChance(id);
 
             return chance;
+        }
+        public  int GetOneDayProfit(int id)
+        {
+            SqlParameter[] sqlParameter = new SqlParameter[]
+            {
+                new SqlParameter("@userid",id)
+            };
+
+            int totalProfit = _context.Database.SqlQuery<int>("exec GetTotalProfitInOneDay @userid", sqlParameter).FirstOrDefault();
+            return totalProfit;
         }
     }
 }

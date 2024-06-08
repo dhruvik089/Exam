@@ -15,9 +15,9 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Chances Left
+                            Total Wallet Amount
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="~/User/Wallet">@ViewBag.ChancesLeft</a></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="~/User/Wallet">@Session["TotalWalletAmount"]</a></div>
                     </div>
                     <div class="col-auto">
                         <i class=""></i>
@@ -32,9 +32,9 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            ToTalAmount
+                            ToTal Credit Amount today
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="~/User/Wallet">@ViewBag.ToTalAmount</a></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="~/User/Wallet">@Session["GetProfitToday"]</a></div>
                     </div>
                     <div class="col-auto">
                         <i class=""></i>

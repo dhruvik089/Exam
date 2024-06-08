@@ -20,25 +20,21 @@
 
                 foreach (var item in Model)
                 {
-                    if (Convert.ToInt32(Session["UserId"]) == item.user_id)
+                    if (item.DebitAmount == 20)
                     {
-
-
-                        if (item.DebitAmount == 20)
-                        {
-                            <tr>
-                                <td>@item.TransactionDate</td>
-                                <td class="text-danger">-@item.DebitAmount</td>
-                                <td>@(item.TotalAmount-item.CreditAmount)</td>
-                            </tr>
-                        }
                         <tr>
                             <td>@item.TransactionDate</td>
-                            <td class="text-success">+@item.CreditAmount</td>
-                            <td>@item.TotalAmount</td>
+                            <td class="text-danger">-@item.DebitAmount</td>
+                            <td>@(item.TotalAmount-item.CreditAmount)</td>
                         </tr>
-
                     }
+                    <tr>
+
+                        <td>@item.TransactionDate</td>
+                        <td class="text-success">+@item.CreditAmount</td>
+                        <td>@item.TotalAmount</td>
+                    </tr>
+
                 }
             }
         </tbody>
