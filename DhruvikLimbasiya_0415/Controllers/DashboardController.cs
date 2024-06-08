@@ -1,9 +1,11 @@
 ﻿using DhruvikLimbasiya_0415.AuthorizeFilter;
+using DhruvikLimbasiya_0415.Common;
 using DhruvikLimbasiya_0415.Models.DbContext;
 using DhruvikLimbasiya_0415.Services.Interface;
 using DhruvikLimbasiya_0415.Services.Services;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace DhruvikLimbasiya_0415.Controllers
@@ -21,19 +23,20 @@ namespace DhruvikLimbasiya_0415.Controllers
             _wallet = new WalletServices();
         }
 
-        public ActionResult Dashboard()
+        public async Task<ActionResult> Dashboard()
         {
-            Session["TotalWalletAmount"] = _wallet.totalWalletAmount(Convert.ToInt32(Session["UserId"]));
+            //Session["TotalWalletAmount"] = _wallet.totalWalletAmount(Convert.ToInt32(Session["UserId"]));
+            Session["TotalWalletAmount"] =await WebHelper.TotalWalletAmount(Convert.ToInt32(Session["UserId"]), "TotalWalletAmount");
 
             return View();
         }
 
-        public ActionResult Play()
+        public async Task<ActionResult> Play()
         {
-            int chance = _wallet.GetChance(Convert.ToInt32(Session["UserId"]));
+            int chance = await WebHelper.TotalWalletAmount(Convert.ToInt32(Session["UserId"]), "GetChance");
             Session["Chance"] = chance;
 
-            int amount = _wallet.getAmountInOneDay(Convert.ToInt32(Session["UserId"]), Convert.ToInt32(Session["creditamount"]));
+            int amount = await WebHelper.getAmountInOneDay(Convert.ToInt32(Session["UserId"]), Convert.ToInt32(Session["creditamount"]), "GetAmountInOneDay");
             Session["TotalAmountInOneday"] = amount;
 
             return View();
@@ -49,7 +52,7 @@ namespace DhruvikLimbasiya_0415.Controllers
         {
             //Session["creditamount"] = amount;
 
-            int Todayamount = _wallet.getAmountInOneDay(id,amount);
+            int Todayamount = _wallet.getAmountInOneDay(id, amount);
             if (Todayamount == 1)
             {
                 _wallet.UpdateWalletAmount(id, amount);
@@ -60,6 +63,13 @@ namespace DhruvikLimbasiya_0415.Controllers
                 return 0;
             }
 
+        }
+
+        public async Task<bool> AddChance(int id)
+        {
+          int chance= await WebHelper.TotalWalletAmount(id, "AddChance");
+            Session["Chance"]= chance;
+            return true;
         }
 
     }

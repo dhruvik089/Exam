@@ -1,4 +1,5 @@
-﻿using DhruvikLimbasiya_0415.Models.DbContext;
+﻿using Antlr.Runtime.Misc;
+using DhruvikLimbasiya_0415.Models.DbContext;
 using DhruvikLimbasiya_0415.Models.ViewModel;
 using Newtonsoft.Json;
 using System;
@@ -43,6 +44,38 @@ namespace DhruvikLimbasiya_0415.Common
                 transactionsHistory = JsonConvert.DeserializeObject<List<TransactionsHistory>>(data);
             }
             return transactionsHistory;
+        }
+
+        public async static Task<int> TotalWalletAmount(int userId, string action)
+        {
+            int totalAmount = 0;
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:52710/api/Wallet/");
+            HttpResponseMessage response = await client.GetAsync($"{action}?id={userId}");
+
+
+            if (response.IsSuccessStatusCode)
+            {
+                var data = await response.Content.ReadAsStringAsync();
+                totalAmount = JsonConvert.DeserializeObject<int>(data);
+            }
+            return totalAmount;
+        }
+
+        public async static Task<int> getAmountInOneDay(int userId,int amount ,string action)
+        {
+            int totalAmount = 0;
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:52710/api/Wallet/");
+            HttpResponseMessage response = await client.GetAsync($"{action}?id={userId}&amount={amount}");
+
+
+            if (response.IsSuccessStatusCode)
+            {
+                var data = await response.Content.ReadAsStringAsync();
+                totalAmount = JsonConvert.DeserializeObject<int>(data);
+            }
+            return totalAmount;
         }
 
     }

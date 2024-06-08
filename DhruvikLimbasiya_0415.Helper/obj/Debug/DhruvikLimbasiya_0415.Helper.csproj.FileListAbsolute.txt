@@ -10,3 +10,15 @@ C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Helper\obj\Debug\DhruvikLimbasiya_0
 C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Helper\obj\Debug\DhruvikLimbasiya_0415.Helper.csproj.CopyComplete
 C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Helper\obj\Debug\DhruvikLimbasiya_0415.Helper.dll
 C:\Dhruvik\DotNET\Exam\DhruvikLimbasiya_0415.Helper\obj\Debug\DhruvikLimbasiya_0415.Helper.pdb
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\bin\Debug\DhruvikLimbasiya_0415.Helper.dll
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\bin\Debug\DhruvikLimbasiya_0415.Helper.pdb
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\bin\Debug\DhruvikLimbasiya_0415.Models.dll
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\bin\Debug\EntityFramework.dll
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\bin\Debug\DhruvikLimbasiya_0415.Models.pdb
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\bin\Debug\DhruvikLimbasiya_0415.Models.dll.config
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\bin\Debug\EntityFramework.xml
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\obj\Debug\DhruvikLimbasiya_0415.Helper.csproj.AssemblyReference.cache
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\obj\Debug\DhruvikLimbasiya_0415.Helper.csproj.CoreCompileInputs.cache
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\obj\Debug\DhruvikL.6441826C.Up2Date
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\obj\Debug\DhruvikLimbasiya_0415.Helper.dll
+D:\DotNet\Exam\DhruvikLimbasiya_0415.Helper\obj\Debug\DhruvikLimbasiya_0415.Helper.pdb

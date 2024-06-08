@@ -12,6 +12,8 @@
     <h3 class="randomeNumber">
     </h3>
     <button class="btn btn-outline-info" type="button" id="playButton">Play</button>
+    <button class="btn btn-outline-info" type="button" id="addChance">Add Chance</button>
+    @*@Html.ActionLink("Play", "Dashboard", new { @Controller = "Dashboard" }, htmlAttributes: new { @class = "btn btn-outline-primary",id="addChance" })*@
     @Html.ActionLink("Back to home Page", "Dashboard", new { @Controller = "Dashboard" }, htmlAttributes: new { @class = "btn btn-outline-primary" })
 
 </div>
@@ -24,24 +26,47 @@
         $("#playButton").on("click", () => {
             var randomNumber = document.getElementsByClassName("randomeNumber")[0];
             var random = Math.floor(Math.random() * 100) + 1;
-            
+
             if (Number(@Session["Chance"]) > 0) {
                 randomNumber.innerHTML = random;
-                    $.ajax({
-                        url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
-                        type: "GET",
-                        success: function (data) {
-                            console.log("click");
-                            if (data == 1) {
-                                randomNumber.innerHTML = random;
-                            }
-                            else {
-                                alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
-                            }
+                $.ajax({
+                    url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
+                    type: "GET",
+                    success: function (data) {
+                        if (data == 1) {
+                            randomNumber.innerHTML = random;
                         }
-                    });
+                        else {
+                            alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
+                        }
+                    }
+                });
             }
-                else {
+            else
+            {
+                    if (confirm("Pay 20 for more one time play...")) {
+                        randomNumber.innerHTML = random;
+                        $.ajax({
+                            url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
+                            type: "GET",
+                            success: function (data) {
+                                if (data == 1) {
+                                    randomNumber.innerHTML = random;
+                                }
+                                else {
+
+                                    alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
+
+                                }
+                            }
+                        });
+                    }
+            }
+
+            //else {
+            //     toastr.error('You have no free chance Please add a chance...');
+            //}
+                @*else {
 
                     if (confirm("Pay 20 for more one time play...")) {
                         randomNumber.innerHTML = random;
@@ -59,11 +84,20 @@
                             }
                         });
                     }
-                }
-
+                }*@
 
         })
-
+        $("#addChance").on("click", () => {
+            $.ajax({
+                url: '/Dashboard/AddChance?id=' +Number(@Session["UserId"]),
+                type: 'GET',
+                success: function (data) {
+                    if (data) {
+                         toastr.success('Add Chance');
+                    }
+                }
+            })
+        })
     })
 
 </script>

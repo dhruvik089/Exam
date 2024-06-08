@@ -14,5 +14,6 @@ namespace DhruvikLimbasiya_0415.Services.Interface
         bool UpdateWalletAmount(int id ,int WalletAmount);
         int GetChance(int id);
         int getAmountInOneDay(int id,int amount);
+        int AddChance(int id);
     }
 }

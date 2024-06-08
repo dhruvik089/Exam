@@ -58,14 +58,13 @@ namespace DhruvikLimbasiya_0415.Services.Services
             }
         }
 
-
         public bool UpdateWalletAmount(int id, int WalletAmount)
         {
 
             SqlParameter[] sqlParameter = new SqlParameter[]
                 {
-                             new SqlParameter("@user_id",id),
-                             new SqlParameter("@CreditAmount",WalletAmount),
+                     new SqlParameter("@user_id",id),
+                     new SqlParameter("@CreditAmount",WalletAmount),
                 };
 
             WalletModel _walletModel = _context.Database.SqlQuery<WalletModel>("exec updateWalletAmount @user_id,@CreditAmount", sqlParameter).FirstOrDefault();
@@ -88,7 +87,7 @@ namespace DhruvikLimbasiya_0415.Services.Services
             return chance;
         }
 
-        public int getAmountInOneDay(int id,int amount)
+        public int getAmountInOneDay(int id, int amount)
         {
             SqlParameter[] sqlParameter = new SqlParameter[]
                {
@@ -100,5 +99,18 @@ namespace DhruvikLimbasiya_0415.Services.Services
             return Amount;
         }
 
+        public int AddChance(int id)
+        {
+            SqlParameter[] sqlParameter = new SqlParameter[]
+            {
+                new SqlParameter("@userId",id)
+            };
+
+            WalletModel wallet = _context.Database.SqlQuery<WalletModel>("exec AddChance @userId", sqlParameter).FirstOrDefault();
+
+            int chance = GetChance(id);
+
+            return chance;
+        }
     }
 }

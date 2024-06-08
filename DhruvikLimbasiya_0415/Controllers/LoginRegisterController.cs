@@ -36,7 +36,7 @@ namespace DhruvikLimbasiya_0415.Controllers
         {
 
             var registration = _context.Registration.FirstOrDefault(m => m.email == _loginModel.email);
-            if(registration!=null)
+            if (registration != null)
             {
                 if (ModelState.IsValid && registration.password == _loginModel.password && registration.email == _loginModel.email && !SessionHelper.isLogin())
                 {
@@ -75,21 +75,29 @@ namespace DhruvikLimbasiya_0415.Controllers
         public async Task<ActionResult> Registration(RegistrationModel registrationModel)
         {
             var IsEmailExist = _context.Registration.Any(m => m.email == registrationModel.email);
-            if (ModelState.IsValid && !IsEmailExist)
+            if (ModelState.IsValid)
             {
-                await WebHelper.AddUser(registrationModel, "Register");
-                var userList = _context.Registration.Where(m => m.email == registrationModel.email).FirstOrDefault();
+                if (!IsEmailExist)
+                {
+                    await WebHelper.AddUser(registrationModel, "Register");
+                    var userList = _context.Registration.Where(m => m.email == registrationModel.email).FirstOrDefault();
 
-                SessionHelper.UserId = userList.user_id;
-                _wallet.addWaletData(SessionHelper.UserId);
+                    SessionHelper.UserId = userList.user_id;
+                    _wallet.addWaletData(SessionHelper.UserId);
 
-                TempData["register"] = "Success  Fully Register..!!";
-                return RedirectToAction("Login");
+                    TempData["register"] = "Success  Fully Register..!!";
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    TempData["registerFail"] = "Failed Register..!!";
+                    ModelState.AddModelError("Email", "Email Aready Exist");
+                    return View();
+                }
             }
             else
             {
                 TempData["registerFail"] = "Failed Register..!!";
-                ModelState.AddModelError("Email", "Email Aready Exist");
                 return View();
             }
         }
