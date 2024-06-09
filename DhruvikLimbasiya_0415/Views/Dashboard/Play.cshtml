@@ -29,15 +29,18 @@
 
             if (Number(@Session["Chance"]) > 0) {
                 randomNumber.innerHTML = random;
+                setTimeout(function () { window.location.reload(); }, 1000);
                 $.ajax({
                     url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
                     type: "GET",
                     success: function (data) {
                         if (data == 1) {
                             randomNumber.innerHTML = random;
+                            toastr.success('Amount Add Successfully')
                         }
                         else {
-                            alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
+                            toastr.error("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
+                            //alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
                         }
                     }
                 });
@@ -50,12 +53,13 @@
                             url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
                             type: "GET",
                             success: function (data) {
-                                if (data == 1) {
+                                if (data == 1) {  
                                     randomNumber.innerHTML = random;
+                                    toastr.success('Amount Add Successfully')
                                 }
                                 else {
-
-                                    alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
+                                    toastr.error('Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour')
+                                    //alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
 
                                 }
                             }

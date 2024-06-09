@@ -30,7 +30,7 @@ namespace DhruvikLimbasiya_0415.AuthorizeFilter
             }
             catch (Exception e)
             {
-                throw e;
+                    throw e;
             }
           
         }

@@ -3,15 +3,35 @@
   "WorkspaceRootPath": "D:\\DotNet\\Exam\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E25C89E4-0D98-4BA8-9502-4602B6D8B9A9}|DhruvikLimbasiya_0415.Services\\DhruvikLimbasiya_0415.Services.csproj|d:\\dotnet\\exam\\dhruviklimbasiya_0415.services\\services\\walletservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|d:\\dotnet\\exam\\dhruviklimbasiya_0415\\views\\dashboard\\wallet.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|solutionrelative:dhruviklimbasiya_0415\\views\\dashboard\\wallet.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E25C89E4-0D98-4BA8-9502-4602B6D8B9A9}|DhruvikLimbasiya_0415.Services\\DhruvikLimbasiya_0415.Services.csproj|D:\\DotNet\\Exam\\dhruviklimbasiya_0415.services\\services\\walletservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E25C89E4-0D98-4BA8-9502-4602B6D8B9A9}|DhruvikLimbasiya_0415.Services\\DhruvikLimbasiya_0415.Services.csproj|solutionrelative:dhruviklimbasiya_0415.services\\services\\walletservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E25C89E4-0D98-4BA8-9502-4602B6D8B9A9}|DhruvikLimbasiya_0415.Services\\DhruvikLimbasiya_0415.Services.csproj|d:\\dotnet\\exam\\dhruviklimbasiya_0415.services\\interface\\iwalletinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E25C89E4-0D98-4BA8-9502-4602B6D8B9A9}|DhruvikLimbasiya_0415.Services\\DhruvikLimbasiya_0415.Services.csproj|solutionrelative:dhruviklimbasiya_0415.services\\interface\\iwalletinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|D:\\DotNet\\Exam\\dhruviklimbasiya_0415\\controllers\\loginregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|solutionrelative:dhruviklimbasiya_0415\\controllers\\loginregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEE0088E-20BE-41DB-9E91-25AC3F811160}|DhruvikLimbasiya_0415.Helper\\DhruvikLimbasiya_0415.Helper.csproj|d:\\dotnet\\exam\\dhruviklimbasiya_0415.helper\\helper\\pager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEE0088E-20BE-41DB-9E91-25AC3F811160}|DhruvikLimbasiya_0415.Helper\\DhruvikLimbasiya_0415.Helper.csproj|solutionrelative:dhruviklimbasiya_0415.helper\\helper\\pager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|d:\\dotnet\\exam\\dhruviklimbasiya_0415\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|solutionrelative:dhruviklimbasiya_0415\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|D:\\DotNet\\Exam\\dhruviklimbasiya_0415\\views\\dashboard\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|D:\\DotNet\\Exam\\dhruviklimbasiya_0415\\views\\dashboard\\play.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|solutionrelative:dhruviklimbasiya_0415\\views\\dashboard\\play.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|d:\\dotnet\\exam\\dhruviklimbasiya_0415\\views\\dashboard\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|solutionrelative:dhruviklimbasiya_0415\\views\\dashboard\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -21,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|D:\\DotNet\\Exam\\dhruviklimbasiya_0415\\common\\webhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|solutionrelative:dhruviklimbasiya_0415\\common\\webhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|D:\\DotNet\\Exam\\dhruviklimbasiya_0415\\views\\dashboard\\play.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|solutionrelative:dhruviklimbasiya_0415\\views\\dashboard\\play.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|D:\\DotNet\\Exam\\dhruviklimbasiya_0415\\controllers\\loginregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A160285-6D82-4FC1-91B6-4AD6C3571FE1}|DhruvikLimbasiya_0415\\DhruvikLimbasiya_0415.csproj|solutionrelative:dhruviklimbasiya_0415\\controllers\\loginregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,94 +55,135 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "WebHelper.cs",
-              "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Common\\WebHelper.cs",
-              "RelativeDocumentMoniker": "DhruvikLimbasiya_0415\\Common\\WebHelper.cs",
-              "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Common\\WebHelper.cs",
-              "RelativeToolTip": "DhruvikLimbasiya_0415\\Common\\WebHelper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAA3AAAA",
+              "Title": "Pager.cs",
+              "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415.Helper\\Helper\\Pager.cs",
+              "RelativeDocumentMoniker": "DhruvikLimbasiya_0415.Helper\\Helper\\Pager.cs",
+              "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415.Helper\\Helper\\Pager.cs",
+              "RelativeToolTip": "DhruvikLimbasiya_0415.Helper\\Helper\\Pager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBIAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T08:31:13.677Z",
+              "WhenOpened": "2024-06-09T05:59:20.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Wallet.cshtml",
+              "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Views\\Dashboard\\Wallet.cshtml",
+              "RelativeDocumentMoniker": "DhruvikLimbasiya_0415\\Views\\Dashboard\\Wallet.cshtml",
+              "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Views\\Dashboard\\Wallet.cshtml",
+              "RelativeToolTip": "DhruvikLimbasiya_0415\\Views\\Dashboard\\Wallet.cshtml",
+              "ViewState": "AQIAABkAAAAAAAAAAAAYwCcAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-09T07:48:25.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginRegisterController.cs",
+              "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Controllers\\LoginRegisterController.cs",
+              "RelativeDocumentMoniker": "DhruvikLimbasiya_0415\\Controllers\\LoginRegisterController.cs",
+              "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Controllers\\LoginRegisterController.cs",
+              "RelativeToolTip": "DhruvikLimbasiya_0415\\Controllers\\LoginRegisterController.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAowFUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T05:10:35.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "DhruvikLimbasiya_0415\\Controllers\\DashboardController.cs",
               "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Controllers\\DashboardController.cs",
               "RelativeToolTip": "DhruvikLimbasiya_0415\\Controllers\\DashboardController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwB0AAAAlAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAYwEkAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-08T08:29:33.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
+              "Title": "WebHelper.cs",
+              "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Common\\WebHelper.cs",
+              "RelativeDocumentMoniker": "DhruvikLimbasiya_0415\\Common\\WebHelper.cs",
+              "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Common\\WebHelper.cs",
+              "RelativeToolTip": "DhruvikLimbasiya_0415\\Common\\WebHelper.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAiwD4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T08:31:13.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "WalletController.cs",
               "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415.Api\\Controllers\\WalletController.cs",
               "RelativeDocumentMoniker": "DhruvikLimbasiya_0415.Api\\Controllers\\WalletController.cs",
               "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415.Api\\Controllers\\WalletController.cs",
               "RelativeToolTip": "DhruvikLimbasiya_0415.Api\\Controllers\\WalletController.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAMwDoAAAA1AAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAMwDsAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-08T08:25:16.899Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Play.cshtml",
-              "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Views\\Dashboard\\Play.cshtml",
-              "RelativeDocumentMoniker": "DhruvikLimbasiya_0415\\Views\\Dashboard\\Play.cshtml",
-              "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Views\\Dashboard\\Play.cshtml",
-              "RelativeToolTip": "DhruvikLimbasiya_0415\\Views\\Dashboard\\Play.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-08T04:30:52.049Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginRegisterController.cs",
-              "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Controllers\\LoginRegisterController.cs",
-              "RelativeDocumentMoniker": "DhruvikLimbasiya_0415\\Controllers\\LoginRegisterController.cs",
-              "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Controllers\\LoginRegisterController.cs",
-              "RelativeToolTip": "DhruvikLimbasiya_0415\\Controllers\\LoginRegisterController.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAowE8AAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T05:10:35.894Z"
             }
           ]
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "IWalletInterface.cs",
+              "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415.Services\\Interface\\IWalletInterface.cs",
+              "RelativeDocumentMoniker": "DhruvikLimbasiya_0415.Services\\Interface\\IWalletInterface.cs",
+              "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415.Services\\Interface\\IWalletInterface.cs",
+              "RelativeToolTip": "DhruvikLimbasiya_0415.Services\\Interface\\IWalletInterface.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T07:30:46.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Play.cshtml",
+              "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Views\\Dashboard\\Play.cshtml",
+              "RelativeDocumentMoniker": "DhruvikLimbasiya_0415\\Views\\Dashboard\\Play.cshtml",
+              "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Views\\Dashboard\\Play.cshtml",
+              "RelativeToolTip": "DhruvikLimbasiya_0415\\Views\\Dashboard\\Play.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADgAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-08T04:30:52.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Views\\Dashboard\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "DhruvikLimbasiya_0415\\Views\\Dashboard\\Dashboard.cshtml",
               "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415\\Views\\Dashboard\\Dashboard.cshtml",
               "RelativeToolTip": "DhruvikLimbasiya_0415\\Views\\Dashboard\\Dashboard.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAArAAAA",
+              "ViewState": "AQIAACMAAAAAAAAAAAAYwDcAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-08T05:23:22.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "WalletServices.cs",
               "DocumentMoniker": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415.Services\\Services\\WalletServices.cs",
               "RelativeDocumentMoniker": "DhruvikLimbasiya_0415.Services\\Services\\WalletServices.cs",
               "ToolTip": "D:\\DotNet\\Exam\\DhruvikLimbasiya_0415.Services\\Services\\WalletServices.cs",
               "RelativeToolTip": "DhruvikLimbasiya_0415.Services\\Services\\WalletServices.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAIwHQAAAAIAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAjwBAAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-08T08:37:35.787Z",
               "EditorCaption": ""

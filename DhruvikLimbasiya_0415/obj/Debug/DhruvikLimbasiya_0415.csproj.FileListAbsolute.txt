@@ -265,3 +265,5 @@ D:\DotNet\Exam\DhruvikLimbasiya_0415\obj\Debug\DhruvikLimbasiya_0415.csproj.Core
 D:\DotNet\Exam\DhruvikLimbasiya_0415\obj\Debug\DhruvikL.CCAE8E46.Up2Date
 D:\DotNet\Exam\DhruvikLimbasiya_0415\obj\Debug\DhruvikLimbasiya_0415.dll
 D:\DotNet\Exam\DhruvikLimbasiya_0415\obj\Debug\DhruvikLimbasiya_0415.pdb
+D:\DotNet\Exam\DhruvikLimbasiya_0415\bin\DhruvikLimbasiya_0415.Helper.dll
+D:\DotNet\Exam\DhruvikLimbasiya_0415\bin\DhruvikLimbasiya_0415.Helper.pdb

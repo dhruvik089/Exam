@@ -203,6 +203,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DhruvikLimbasiya_0415.Helper\DhruvikLimbasiya_0415.Helper.csproj">
+      <Project>{DEE0088E-20BE-41DB-9E91-25AC3F811160}</Project>
+      <Name>DhruvikLimbasiya_0415.Helper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DhruvikLimbasiya_0415.Models\DhruvikLimbasiya_0415.Models.csproj">
       <Project>{E235E86C-88C5-460B-84D3-2A5A5A322450}</Project>
       <Name>DhruvikLimbasiya_0415.Models</Name>

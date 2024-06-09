@@ -38,9 +38,9 @@ namespace DhruvikLimbasiya_0415.Api.Controllers
 
         [Route("api/Wallet/GetAmountInOneDay")]
         [HttpGet]
-        public int GetAmountInOneDay(int id,int amount)
+        public int GetAmountInOneDay(int id, int amount)
         {
-            int amountperDay = _wallet.getAmountInOneDay(id,amount);
+            int amountperDay = _wallet.getAmountInOneDay(id, amount);
             return amountperDay;
         }
 
@@ -57,6 +57,14 @@ namespace DhruvikLimbasiya_0415.Api.Controllers
         public int GetOneDayProfit(int id)
         {
             int profit = _wallet.GetOneDayProfit(id);
+            return profit;
+        }
+
+        [Route("api/Wallet/GetTotalEarn")]
+        [HttpGet]
+        public int GetTotalEarn(int id)
+        {
+            int profit = _wallet.GetTotalEarn(id);
             return profit;
         }
     }

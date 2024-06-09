@@ -16,5 +16,6 @@ namespace DhruvikLimbasiya_0415.Services.Interface
         int getAmountInOneDay(int id,int amount);
         int AddChance(int id);
         int GetOneDayProfit(int id);
+        int GetTotalEarn(int id);
     }
 }

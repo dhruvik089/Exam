@@ -1,13 +1,63 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@{
+    Layout = null; 
+}
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
     <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .error-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #d9534f;
+        }
+
+        p {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #337ab7;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #286090;
+            }
+    </style>
 </head>
 <body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
+    <div class="error-container">
+        <h1>Oops! Something went wrong.</h1>
+        <p>We're sorry, but an unexpected error occurred.</p>
+        <p>Please try again later.</p>
+        @Html.ActionLink("Go to Home Page", "Login", new{ controller = "LoginRegister" }, htmlAttributes: new {@class="btn btn-outline-primary text-decoration-none"})
+    </div>
 </body>
 </html>

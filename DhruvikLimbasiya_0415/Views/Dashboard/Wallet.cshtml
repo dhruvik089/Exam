@@ -20,24 +20,64 @@
 
                 foreach (var item in Model)
                 {
-                    if (item.DebitAmount == 20)
+                    if (item.user_id == Convert.ToInt32(Session["UserId"]))
                     {
+
                         <tr>
                             <td>@item.TransactionDate</td>
-                            <td class="text-danger">-@item.DebitAmount</td>
-                            <td>@(item.TotalAmount-item.CreditAmount)</td>
+
+                            @if (item.DebitAmount == 20)
+                            {
+                                <td class="text-danger">-@item.DebitAmount</td>
+                                <td>@(item.TotalAmount - item.CreditAmount)</td>
+                            }
+                            @if (item.CreditAmount > 0)
+                            {
+                                <td class="text-success">+@item.CreditAmount</td>
+                                <td>@(item.TotalAmount)</td>
+                            }
+
                         </tr>
                     }
-                    <tr>
-
-                        <td>@item.TransactionDate</td>
-                        <td class="text-success">+@item.CreditAmount</td>
-                        <td>@item.TotalAmount</td>
-                    </tr>
-
                 }
             }
         </tbody>
     </table>
+
+    <div class="d-flex justify-content-end">
+
+        @{
+
+            int StartPage = Math.Max(1, ViewBag.page - 2);
+            int EndingPage = Math.Min(ViewBag.totalPage, StartPage + 4);
+        }
+
+        @if (ViewBag.page > 1)
+        {
+
+            @Html.ActionLink("First", "Wallet", "Dashboard", new { pageNumber = 1 }, htmlAttributes: new { @class = "btn btn-info Previous" })
+        }
+
+
+
+        @for (int i = StartPage; i <= EndingPage; i++)
+        {
+            bool isActive = (i == ViewBag.page);
+
+            string buttonClass = isActive ? "btn btn-info mx-1 active" : "btn btn-info mx-1 next";
+
+            @Html.ActionLink(@i.ToString(), "Wallet", "Dashboard", new { pageNumber = i }, htmlAttributes: new { @class = buttonClass })
+
+
+
+        }
+        @if (ViewBag.page * ViewBag.pageSize < ViewBag.totalCount)
+        {
+            @Html.ActionLink("Last", "ShowTotalComplete", "Student", new { pageNumber = ViewBag.totalPage }, htmlAttributes: new { @class = "btn btn-info mx-2 Next" })
+
+        }
+
+    </div>
+
     @Html.ActionLink("Back to home Page", "Dashboard", new { @Controller = "Dashboard" }, htmlAttributes: new { @class = "btn btn-outline-primary" })
 </div>
