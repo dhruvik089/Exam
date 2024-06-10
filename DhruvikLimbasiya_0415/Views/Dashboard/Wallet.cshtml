@@ -25,16 +25,16 @@
 
                         <tr>
                             <td>@item.TransactionDate</td>
+                            @if (item.CreditAmount > 0)
+                            {
+                                <td class="text-success">+@item.CreditAmount</td>
+                                <td>@(item.TotalAmount)</td>
+                            }
 
                             @if (item.DebitAmount == 20)
                             {
                                 <td class="text-danger">-@item.DebitAmount</td>
                                 <td>@(item.TotalAmount - item.CreditAmount)</td>
-                            }
-                            @if (item.CreditAmount > 0)
-                            {
-                                <td class="text-success">+@item.CreditAmount</td>
-                                <td>@(item.TotalAmount)</td>
                             }
 
                         </tr>
@@ -73,7 +73,7 @@
         }
         @if (ViewBag.page * ViewBag.pageSize < ViewBag.totalCount)
         {
-            @Html.ActionLink("Last", "ShowTotalComplete", "Student", new { pageNumber = ViewBag.totalPage }, htmlAttributes: new { @class = "btn btn-info mx-2 Next" })
+            @Html.ActionLink("Last", "Wallet", "Dashboard", new { pageNumber = ViewBag.totalPage }, htmlAttributes: new { @class = "btn btn-info mx-2 Next" })
 
         }
 

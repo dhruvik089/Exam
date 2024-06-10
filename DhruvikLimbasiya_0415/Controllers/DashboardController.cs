@@ -68,7 +68,7 @@ namespace DhruvikLimbasiya_0415.Controllers
             {
 
                 //var transactionsList = _context.TransactionsHistory.ToList();
-                var transactionsList = _context.TransactionsHistory.Where(m => m.user_id == SessionHelper.UserId).ToList();
+                var transactionsList = _context.TransactionsHistory.Where(m => m.user_id == SessionHelper.UserId).OrderByDescending(m=>m.TransactionDate).ToList();
                 int page = pageNumber ?? 1;
 
                 List<TransactionsHistory> PaginationList = Pager<TransactionsHistory>.Pagination(transactionsList, page);

@@ -12,15 +12,13 @@
     <h3 class="randomeNumber">
     </h3>
     <button class="btn btn-outline-info" type="button" id="playButton">Play</button>
-    <button class="btn btn-outline-info" type="button" id="addChance">Add Chance</button>
+    @*<button class="btn btn-outline-info" type="button" id="addChance">Add Chance</button>*@
     @*@Html.ActionLink("Play", "Dashboard", new { @Controller = "Dashboard" }, htmlAttributes: new { @class = "btn btn-outline-primary",id="addChance" })*@
     @Html.ActionLink("Back to home Page", "Dashboard", new { @Controller = "Dashboard" }, htmlAttributes: new { @class = "btn btn-outline-primary" })
 
 </div>
 
-
-
-<script>
+<!--<script>
     $(document).ready(function () {
         //debugger
         $("#playButton").on("click", () => {
@@ -35,6 +33,7 @@
                     type: "GET",
                     success: function (data) {
                         if (data == 1) {
+
                             randomNumber.innerHTML = random;
                             toastr.success('Amount Add Successfully')
                         }
@@ -53,7 +52,7 @@
                             url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
                             type: "GET",
                             success: function (data) {
-                                if (data == 1) {  
+                                if (data == 1) {
                                     randomNumber.innerHTML = random;
                                     toastr.success('Amount Add Successfully')
                                 }
@@ -69,28 +68,28 @@
 
             //else {
             //     toastr.error('You have no free chance Please add a chance...');
-            //}
-                @*else {
+            //}-->
+@*else {
 
-                    if (confirm("Pay 20 for more one time play...")) {
+        if (confirm("Pay 20 for more one time play...")) {
+            randomNumber.innerHTML = random;
+            $.ajax({
+                url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
+                type: "GET",
+                success: function (data) {
+                    if (data == 1) {
                         randomNumber.innerHTML = random;
-                        $.ajax({
-                            url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
-                            type: "GET",
-                            success: function (data) {
-                                if (data == 1) {
-                                    randomNumber.innerHTML = random;
-                                }
-                                else {
-                                    alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
-
-                                }
-                            }
-                        });
                     }
-                }*@
+                    else {
+                        alert("Sorry your today Wallet amount is more than 500. So you can play game after 24 Hour");
 
-        })
+                    }
+                }
+            });
+        }
+    }*@
+
+<!--})
         $("#addChance").on("click", () => {
             $.ajax({
                 url: '/Dashboard/AddChance?id=' +Number(@Session["UserId"]),
@@ -104,4 +103,68 @@
         })
     })
 
+</script>-->
+<script>
+$(document).ready(function () {
+    $("#playButton").on("click", () => {
+        var randomNumber = document.getElementsByClassName("randomeNumber")[0];
+
+        // Function to animate the numbers from 1 to 100
+        function animateNumbers() {
+            var currentNumber = 1;
+            var interval = setInterval(function () {
+                randomNumber.innerHTML = currentNumber;
+                currentNumber++;
+                if (currentNumber > 100) {
+                    clearInterval(interval);
+                    generateRandomNumber();
+                }
+            }, 20); // Change the interval to control the speed of animation
+        }
+
+        // Function to generate and display random number
+        function generateRandomNumber() {
+            var random = Math.floor(Math.random() * 100) + 1;
+            randomNumber.innerHTML = random;
+
+            // AJAX request to update wallet amount
+            $.ajax({
+                url: "/Dashboard/updateWalletAmount/?id=" + @Session["UserId"] + "&amount=" + random,
+                type: "GET",
+                success: function (data) {
+                    setTimeout(function () { window.location.reload(); }, 1000);
+                    if (data == 1) {
+
+                toastr.success('Amount Added Successfully');
+                }
+                else {
+                toastr.error("Sorry, your today's wallet amount is more than 500. You can play the game after 24 hours.");
+                }
+                }
+                });
+                }
+
+                // Check if there are free chances
+                if (Number(@Session["Chance"]) > 0) {
+                animateNumbers(); // Animate numbers from 1 to 100
+                } else {
+                    if (confirm("Pay 20 for one more play...")) {
+
+                animateNumbers(); // Animate numbers from 1 to 100
+                }
+                }
+                });
+
+                $("#addChance").on("click", () => {
+                $.ajax({
+                url: '/Dashboard/AddChance?id=' + Number(@Session["UserId"]),
+                type: 'GET',
+                success: function (data) {
+                if (data) {
+                toastr.success('Added Chance');
+                }
+                }
+                });
+                });
+});
 </script>
