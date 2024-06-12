@@ -1,4 +1,5 @@
-﻿using DhruvikLimbasiya_0415.Models.DbContext;
+﻿using DhruvikLimbasiya_0415.Api.JwtService;
+using DhruvikLimbasiya_0415.Models.DbContext;
 using DhruvikLimbasiya_0415.Session;
 using System;
 using System.Collections.Generic;
@@ -30,9 +31,9 @@ namespace DhruvikLimbasiya_0415.AuthorizeFilter
             }
             catch (Exception e)
             {
-                    throw e;
+                throw e;
             }
-          
+
         }
 
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
@@ -51,6 +52,5 @@ namespace DhruvikLimbasiya_0415.AuthorizeFilter
                 filterContext.Result = new HttpStatusCodeResult(System.Net.HttpStatusCode.Forbidden);
             }
         }
-
-    }
+    }      
 }

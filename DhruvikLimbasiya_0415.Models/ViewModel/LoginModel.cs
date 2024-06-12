@@ -15,6 +15,6 @@ namespace DhruvikLimbasiya_0415.Models.ViewModel
         [Required(ErrorMessage = "Enter password")]
         public string password { get; set; }
 
-        
+        public string Token { get; set; }
     }
 }

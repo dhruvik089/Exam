@@ -1,4 +1,5 @@
-﻿using DhruvikLimbasiya_0415.AuthorizeFilter;
+﻿using DhruvikLimbasiya_0415.Api.JwtService;
+using DhruvikLimbasiya_0415.AuthorizeFilter;
 using DhruvikLimbasiya_0415.Common;
 using DhruvikLimbasiya_0415.Helper.Helper;
 using DhruvikLimbasiya_0415.Models.DbContext;
@@ -14,7 +15,7 @@ using System.Web.Mvc;
 namespace DhruvikLimbasiya_0415.Controllers
 {
 
-
+    //[JwtAuthentication]
     [CustomAuthorizeFilter]
     public class DashboardController : Controller
     {
@@ -28,14 +29,22 @@ namespace DhruvikLimbasiya_0415.Controllers
 
         public async Task<ActionResult> Dashboard()
         {
-            //Session["TotalWalletAmount"] = _wallet.totalWalletAmount(Convert.ToInt32(Session["UserId"]));
+
             try
             {
+                if (Request.Cookies["jwt"]!= null)
+                {
+                string Authorization = Request.Cookies["jwt"].Value;
 
-                Session["TotalWalletAmount"] = await WebHelper.TotalWalletAmount(Convert.ToInt32(Session["UserId"]), "TotalWalletAmount");
-                Session["GetProfitToday"] = await WebHelper.TotalWalletAmount(Convert.ToInt32(Session["UserId"]), "GetOneDayProfit");
-                Session["GetTotalEarn"] = await WebHelper.TotalWalletAmount(SessionHelper.UserId, "GetTotalEarn");
-                return View();
+                    Session["TotalWalletAmount"] = await WebHelper.TotalWalletAmount(Convert.ToInt32(Session["UserId"]), "TotalWalletAmount", Authorization);
+                    Session["GetProfitToday"] = await WebHelper.TotalWalletAmount(Convert.ToInt32(Session["UserId"]), "GetOneDayProfit", Request.Cookies["jwt"].Value);
+                    Session["GetTotalEarn"] = await WebHelper.TotalWalletAmount(SessionHelper.UserId, "GetTotalEarn", Request.Cookies["jwt"].Value);
+                    return View();
+                }
+                else
+                {
+                    return RedirectToAction("Login", "LoginRegister");
+                }
             }
             catch
             {
@@ -48,12 +57,21 @@ namespace DhruvikLimbasiya_0415.Controllers
             try
             {
 
-                int chance = await WebHelper.TotalWalletAmount(Convert.ToInt32(Session["UserId"]), "GetChance");
-                Session["Chance"] = chance;
 
-                int amount = await WebHelper.getAmountInOneDay(Convert.ToInt32(Session["UserId"]), Convert.ToInt32(Session["creditamount"]), "GetAmountInOneDay");
-                Session["TotalAmountInOneday"] = amount;
-                return View();
+                if (Request.Cookies["jwt"] != null)
+                {
+                string JwtToken = Request.Cookies["jwt"].Value;
+                    int chance = await WebHelper.TotalWalletAmount(Convert.ToInt32(Session["UserId"]), "GetChance", JwtToken);
+                    Session["Chance"] = chance;
+
+                    int amount = await WebHelper.getAmountInOneDay(Convert.ToInt32(Session["UserId"]), Convert.ToInt32(Session["creditamount"]), "GetAmountInOneDay", Request.Cookies["jwt"].Value);
+                    Session["TotalAmountInOneday"] = amount;
+                    return View();
+                }
+                else
+                {
+                    return RedirectToAction("Login", "LoginRegister");
+                }
             }
             catch
             {
@@ -68,7 +86,7 @@ namespace DhruvikLimbasiya_0415.Controllers
             {
 
                 //var transactionsList = _context.TransactionsHistory.ToList();
-                var transactionsList = _context.TransactionsHistory.Where(m => m.user_id == SessionHelper.UserId).OrderByDescending(m=>m.TransactionDate).ToList();
+                var transactionsList = _context.TransactionsHistory.Where(m => m.user_id == SessionHelper.UserId).OrderByDescending(m => m.TransactionDate).ToList();
                 int page = pageNumber ?? 1;
 
                 List<TransactionsHistory> PaginationList = Pager<TransactionsHistory>.Pagination(transactionsList, page);
@@ -82,11 +100,12 @@ namespace DhruvikLimbasiya_0415.Controllers
             }
             catch
             {
-                return View("~/Views/Shared/Error.cshtml");
+                //return View("~/Views/Shared/Error.cshtml");
+                return RedirectToAction("Login", "LoginRegister");
             }
         }
 
-        
+
         public int updateWalletAmount(int id, int amount)
         {
 
@@ -106,9 +125,18 @@ namespace DhruvikLimbasiya_0415.Controllers
 
         public async Task<bool> AddChance(int id)
         {
-            int chance = await WebHelper.TotalWalletAmount(id, "AddChance");
-            Session["Chance"] = chance;
-            return true;
+            try
+            {
+
+                string JwtToken = Request.Cookies["jwt"].Value;
+                int chance = await WebHelper.TotalWalletAmount(id, "AddChance", JwtToken);
+                Session["Chance"] = chance;
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
     }

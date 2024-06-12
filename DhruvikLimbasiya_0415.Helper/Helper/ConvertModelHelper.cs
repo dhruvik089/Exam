@@ -19,5 +19,15 @@ namespace DhruvikLimbasiya_0415.Helper.Helper
 
             return _register;
         }
+
+        public static Registration ConvertLoginModelToDbModel(LoginModel loginModel)
+        {
+            Registration _register = new Registration();
+            _register.email = loginModel.email;
+            _register.password = loginModel.password;
+
+            return _register;
+        }
+
     }
 }

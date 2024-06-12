@@ -32,7 +32,7 @@ namespace DhruvikLimbasiya_0415.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(LoginModel _loginModel)
+        public async Task<ActionResult> Login(LoginModel _loginModel)
         {
 
             var registration = _context.Registration.FirstOrDefault(m => m.email == _loginModel.email);
@@ -40,11 +40,25 @@ namespace DhruvikLimbasiya_0415.Controllers
             {
                 if (ModelState.IsValid && registration.password == _loginModel.password && registration.email == _loginModel.email && !SessionHelper.isLogin())
                 {
-                    @Session["UserName"] = registration.name;
+                    
+                    LoginModel isUserexist = await WebHelper.Login(_loginModel,"Login");
+
+                    var cookie = new HttpCookie("jwt", isUserexist.Token)
+                    {
+                        HttpOnly = true,
+                        Secure = true,
+                        Expires = DateTime.UtcNow.AddMinutes(1)
+                    };
+                    SessionHelper.UserName = registration.name;
+                    Request.Headers.Add("Authorization", "Bearer " + isUserexist.Token);
+                    Response.Cookies.Add(cookie);
+                    Session["UserId"] = registration.user_id;
+
+                    Session["UserName"] = registration.name;
                     SessionHelper.UserName = registration.name;
                     SessionHelper.email = _loginModel.email;
                     SessionHelper.UserId = registration.user_id;
-                    @Session["UserId"] = registration.user_id;
+                    Session["UserId"] = registration.user_id;
                     Session["TotalWalletAmount"] = _wallet.totalWalletAmount(registration.user_id);
                     TempData["Login"] = "Login SuccessFuly..!!";
                     return RedirectToAction("Dashboard", "Dashboard");
@@ -105,6 +119,9 @@ namespace DhruvikLimbasiya_0415.Controllers
         public ActionResult Logout()
         {
             SessionHelper.Logout();
+            Response.Cookies["jwt"].Value = null;
+            Response.Cookies["jwt"].Expires = DateTime.Now.AddDays(-1);
+
             return RedirectToAction("Login");
         }
 

@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -29,12 +31,13 @@ namespace DhruvikLimbasiya_0415.Common
             return _registrater;
         }
 
-        public async static Task<List<TransactionsHistory>> showTransaction(int userId,string action)
+        public async static Task<List<TransactionsHistory>> showTransaction(int userId, string action, string JwtToken)
         {
             List<TransactionsHistory> transactionsHistory = new List<TransactionsHistory>();
-            
+
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:52710/api/TransactionHistory/");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", JwtToken);
             HttpResponseMessage response = await client.GetAsync($"{action}?id={userId}");
 
 
@@ -46,11 +49,12 @@ namespace DhruvikLimbasiya_0415.Common
             return transactionsHistory;
         }
 
-        public async static Task<int> TotalWalletAmount(int userId, string action)
+        public async static Task<int> TotalWalletAmount(int userId, string action, string JwtToken)
         {
             int totalAmount = 0;
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:52710/api/Wallet/");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", JwtToken);
             HttpResponseMessage response = await client.GetAsync($"{action}?id={userId}");
 
 
@@ -62,11 +66,12 @@ namespace DhruvikLimbasiya_0415.Common
             return totalAmount;
         }
 
-        public async static Task<int> getAmountInOneDay(int userId,int amount ,string action)
+        public async static Task<int> getAmountInOneDay(int userId, int amount, string action,string JwtToken)
         {
             int totalAmount = 0;
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:52710/api/Wallet/");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", JwtToken);
             HttpResponseMessage response = await client.GetAsync($"{action}?id={userId}&amount={amount}");
 
 
@@ -78,5 +83,24 @@ namespace DhruvikLimbasiya_0415.Common
             return totalAmount;
         }
 
+        public async static Task<LoginModel> Login(LoginModel _loginModel, string action)
+        {
+            LoginModel login = new LoginModel();
+
+            HttpClient client = new HttpClient();
+            string content = JsonConvert.SerializeObject(_loginModel);
+
+            client.BaseAddress = new Uri("http://localhost:52710/api/LoginRegister/");
+
+            HttpResponseMessage response = await client.PostAsync(action, new StringContent(content, System.Text.Encoding.UTF8, "application/json"));
+
+            if (response.IsSuccessStatusCode)
+            {
+                var data = await response.Content.ReadAsStringAsync();
+                login = JsonConvert.DeserializeObject<LoginModel>(data);
+                return login;
+            }
+            return null;
+        }
     }
 }

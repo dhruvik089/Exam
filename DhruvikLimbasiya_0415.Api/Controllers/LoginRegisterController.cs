@@ -1,4 +1,5 @@
-﻿using DhruvikLimbasiya_0415.Helper.Helper;
+﻿using DhruvikLimbasiya_0415.Api.JwtService;
+using DhruvikLimbasiya_0415.Helper.Helper;
 using DhruvikLimbasiya_0415.Models.DbContext;
 using DhruvikLimbasiya_0415.Models.ViewModel;
 using DhruvikLimbasiya_0415.Services.Interface;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace DhruvikLimbasiya_0415.Api.Controllers
@@ -41,6 +43,61 @@ namespace DhruvikLimbasiya_0415.Api.Controllers
             {
                 return null;
             }
+        }
+
+
+        [HttpPost]
+        [Route("api/LoginRegister/Login")]
+        public LoginModel Login(LoginModel user)
+        {
+            string email = user.email;
+            string password = user.password;
+            var keepLogin = true;
+            bool keepLoginSession;
+
+            keepLoginSession = keepLogin == true;
+
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                ModelState.AddModelError("", "Please enter valid username and password");
+
+                return null;
+            }
+
+            Registration appUserInfo = _context.Registration.FirstOrDefault(u => u.email == email);
+
+            if (appUserInfo != null && ModelState.IsValid && appUserInfo.email == user.email && appUserInfo.password == user.password)
+            {
+                string encryptedPwd = password;
+
+                var userPassword = appUserInfo.password;
+                var username = appUserInfo.email;
+                if (encryptedPwd.Equals(userPassword) && username.Equals(email))
+                {
+                    var role = appUserInfo.name;
+                    var jwtToken = Authentication.GenerateJWTAuthetication(email, role);
+                    var validUserName = Authentication.ValidateToken(jwtToken);
+
+                    if (string.IsNullOrEmpty(validUserName))
+                    {
+                        ModelState.AddModelError("", "Unauthorized login attempt ");
+
+                        return null;
+                    }
+
+                    var cookie = new HttpCookie("jwt", jwtToken)
+                    {
+                        HttpOnly = true,
+                        Secure = true,
+                        
+                    };
+                    HttpContext.Current.Response.Cookies.Add(cookie);
+                    user.Token = jwtToken;
+
+                    return user;
+                }
+            }
+            return user;
         }
     }
 }
