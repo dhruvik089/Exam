@@ -123,21 +123,21 @@ namespace DhruvikLimbasiya_0415.Controllers
 
         }
 
-        public async Task<bool> AddChance(int id)
-        {
-            try
-            {
+        //public async Task<bool> AddChance(int id)
+        //{
+        //    try
+        //    {
 
-                string JwtToken = Request.Cookies["jwt"].Value;
-                int chance = await WebHelper.TotalWalletAmount(id, "AddChance", JwtToken);
-                Session["Chance"] = chance;
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-        }
+        //        string JwtToken = Request.Cookies["jwt"].Value;
+        //        int chance = await WebHelper.TotalWalletAmount(id, "AddChance", JwtToken);
+        //        Session["Chance"] = chance;
+        //        return true;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
 
     }
 }
